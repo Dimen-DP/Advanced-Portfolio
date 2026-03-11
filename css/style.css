@@ -1,0 +1,205 @@
+#wrapper{
+    margin-right:auto;
+    margin-left:auto;
+    width:80%;
+    background-color: rgb(0, 0, 0);
+    clear: both;
+}
+header{
+    text-align:center;
+    font-weight:bold;
+    font-style:italic;
+    background-color: rgb(85, 85, 85);
+    padding-bottom: 5px;
+}
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-image: url(../imgs/biggradient.jpg);
+}
+nav{
+    float: left;
+    background-color:rgb(0, 0, 0);
+    width:150px;
+}
+#floatright{
+    float:right;
+}
+main{
+    background-color: white;
+    display: block;
+    margin-left: 155px;
+    padding: 20px;
+}
+img{
+    border: 3px solid #000000;
+}
+dl{
+    text-align: left;
+    font-style:italic;
+}
+nav a:link{
+    color:rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+nav a:hover{
+    color:rgb(255, 255, 255);
+    background-color: rgb(46, 45, 45);
+    transition: background-color 2s;
+}
+nav a:visited{
+    color:darkmagenta;
+}
+footer{
+    font-size:small;
+    font-style:italic;
+    background-color: rgb(85, 85, 85);
+    padding-top: 10px;
+    padding-bottom:10px;
+}
+a:link{
+    color:#0000FF;
+}
+a:hover{
+    color:#dca7e8;
+}
+a:visited{
+    color:#800080;
+}
+.filler{
+    font-size: xx-small;
+}
+nav ul{
+    list-style-type: none;
+    text-align: center;
+}
+nav a{
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    margin-left: -2.5em;
+    margin-right: -0.2em;
+}
+#jscript {
+    display:none; 
+}
+figure{
+    border: 1px black solid
+}
+dt{
+    font-size: 12pt;
+    font-style: italic;
+}
+dd{
+    font-size: 13pt;
+}
+.show{
+    display: none;
+}
+table,th,td{
+                border: 1px black solid;
+            }
+            .center{
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .certified{
+                color: green;
+            }
+tr:nth-child(odd){
+    background-color: rgb(221, 212, 212);
+}
+tr:nth-child(even){
+    background-color: #ffffff;
+}
+th{
+    background-color: white;
+}
+@media only screen and (max-width: 1024px) {
+    body{
+        margin:0;
+        background-image:none;
+    }
+    #wrapper{
+        min-width: 0;
+        padding: 0;
+        box-shadow: none;
+    }
+    header{
+        border-bottom: 5px solid #FEF6C2;
+    }
+    h1{
+        margin-top:0;
+        margin-bottom: 1em;
+        padding-top: 1em;
+        padding-bottom:1em;
+        font-size: 2.5em;
+    }
+    nav{
+        float: none;
+        width: auto;
+        padding-top:0;
+        margin:10px;
+        font-size:1.3em;
+    }
+    nav li{
+        display:inline-block
+    }
+    nav a{
+        padding:1em;
+        width:8em;
+        font-weight:bold;
+        border-style:none;
+    }
+    nav ul{
+        padding:0;
+        margin:0;
+    }
+    main{
+        padding:0;
+        margin:0;
+        font-size:90%;
+    }
+    body{
+    background-image: url(../imgs/gradient.jpg);
+    background-repeat: repeat-y;
+    background-color: #73113b;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    }
+}
+@media only screen and (max-width: 768px){
+    header{
+        width: 100%;
+    }
+    h1{
+        font-size:2em;
+        text-align:center;
+        padding-left:0;
+    }
+    nav{
+        margin:0;
+        padding-right: 2px;
+        clear: both;
+    }
+    main{
+        padding-top:1px;
+    }
+    h2{
+        padding-top:0.5em;
+        padding-right:0;
+        padding-bottom:0;
+        padding-left:0.5em;
+        margin-right:0.5em;
+    }
+    #wrapper{
+        min-width: 0;
+        padding: 0;
+        box-shadow: none;
+    }
+    body{
+        background-image: url(../imgs/gradient.jpg);
+        background-repeat:repeat;
+        background-color: red;
+    }
+}

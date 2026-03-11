@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>David Pittman Portfolio</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../../css/style.css" media="screen">
+        <link rel="stylesheet" href="../../css/styleprint.css" media="print">
+        <style>
+           fieldset{
+            margin:7px
+           }
+        </style>
+        <script>
+            function validateForm() {
+                if (document.forms[0].fName.value == "") {
+                    alert("First name field cannot be empty.")
+                    return false
+                }///end if
+                if (document.forms[0].Crit.value == "") {
+                    alert("The question field cannot be empty")
+                    return false
+                }///end if
+                alert("The form is valid")
+                return true
+                ///Also the main color I use in the background is #4c4969
+            }/// end function validateform
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>
+                    David Pittman's Portfolio
+                </h1>
+            </header>
+            <nav class="hide">
+                <ul>
+                    <li>
+                        <a href="../../index.html">home</a>
+                    </li>
+                    <li>
+                        <a
+                            href="../../pages/projects/projects.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="Questions.html">Questions</a>
+                    </li>
+                    <li>
+                        <a href="../table/History.html">History</a>
+                    </li>
+                </ul>
+            </nav>
+            <main>
+                <div class="hide">
+                    <fieldset>
+                        <legend>Questions For the site</legend>
+                        <form method="post"
+                            action="http://webdevbasics.net/scripts/demo.php"
+                            onsubmit="return validateForm()">
+                            <label for="fName">First name</label>
+                            <input type="text" id="fName" name="fName"><br>
+                            <label for="lName">last name(optional)</label>
+                            <input type="text" id="lName" name="lName"><br>
+                            <label for="Crit">Question</label>
+                            <textarea id="Crit" name="Crit"></textarea><br>
+                            <input type="submit" value="Send questions" id="submit">
+                        </form>
+                    </fieldset>
+                <br>
+                <br>
+                </div>
+                <h1 class="show">
+                    Are you seriously trying to print this?
+                </h1>
+            </main>
+
+            <footer>
+                Copyright&copy; David Pittman 2025
+            </footer>
+        </div>
+    </body>
+</html>
