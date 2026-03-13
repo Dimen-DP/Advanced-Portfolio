@@ -202,4 +202,10 @@ th{
         background-repeat:repeat;
         background-color: red;
     }
+    #floatright{
+        clear: both;
+    }
+    p{
+        font-size: 36pt;
+    }
 }
