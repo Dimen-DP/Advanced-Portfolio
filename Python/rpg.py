@@ -32,9 +32,8 @@ def turn_start(turn):
     global Recursive_Magic
     global damage
     en_defined_def = en_phys_def
-    for i in range:
-        if Recursive_Magic >= 100:
-            Recursive_Magic -= 100
+    while Recursive_Magic >= 100:
+        Recursive_Magic -= 100
                
     if berserker_defense_Half == True:
         en_defined_def = en_defined_def/halve_stacks
