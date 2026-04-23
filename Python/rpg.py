@@ -31,6 +31,8 @@ def turn_start(turn):
     global halve_stacks
     global Recursive_Magic
     global damage
+    global max_hp
+    global max_mp
     en_defined_def = en_phys_def
     while Recursive_Magic >= 100:
         Recursive_Magic -= 100
