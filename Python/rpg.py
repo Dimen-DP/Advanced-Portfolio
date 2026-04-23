@@ -34,7 +34,8 @@ def turn_start(turn):
     en_defined_def = en_phys_def
     while Recursive_Magic >= 100:
         Recursive_Magic -= 100
-               
+        max_hp += 10
+        max_mp += 10       
     if berserker_defense_Half == True:
         en_defined_def = en_defined_def/halve_stacks
         en_defined_magi_def = en_defined_magi_def/halve_stacks
@@ -77,6 +78,8 @@ def en_turn_start(turn):
     global en_revives
     global en_mp
     global en_max_mp
+    if hp > max_hp:
+        hp = max_hp
     defined_def = phys_def
     defined_def  = defined_def * mult_def
     defined_def = defined_def / phys_def_break
