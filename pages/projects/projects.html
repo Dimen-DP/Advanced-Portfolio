@@ -27,13 +27,17 @@
             #pythoncolor a:hover{
                 color:crimson
             }
-        </style>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
-            </script>
+        </style> 
             <script>
-                $(document).ready(function(){
-                    $('#more').click(function(){
-                        $('#jscript').fadeToggle(1000);
+                document.addEventListener('DOMContentLoaded', function() {
+                    var mainSelect = document.querySelector('main')
+                    const star = document.getElementById('more')
+                    star.addEventListener('click', function() {
+                    var python = document.createElement('a')
+                    python.setAttribute('href', '../../Python/rpg.py')
+                    var pythonText = document.createTextNode('Download Python Battle Simulation')
+                    python.appendChild(pythonText);
+                    mainSelect.appendChild(python)
                     });
                 });
             </script>
@@ -157,9 +161,6 @@
                         my current project which this page will update the python file whenever the python file is updated.
                         <a href="#" id="more" class="hide">Check Current Projects</a>
                         <br>
-                        <div id="jscript">
-                            <a  class="hide" href="../../Python/rpg.py" target="_blank">Download Python Battle Simulation</a>
-                        </div>
                     </dd>
                 </dl>
             </main>
