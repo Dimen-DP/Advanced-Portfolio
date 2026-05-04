@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>David Pittman Portfolio</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../../css/style.css" media="screen">
+        <link rel="stylesheet" href="../../css/styleprint.css" media="print">
+        <style>
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var mainSelect = document.querySelector('main')
+                var moreSt = document.getElementById('breakpoint')
+                const star = document.getElementById('more')
+                let pytho = false
+                star.addEventListener('click', function() {
+                    if(pytho === false){
+                        var python = document.createElement('a')
+                        python.setAttribute('href', '../../Python/rpg.py')
+                        python.setAttribute('download', '')
+                        var pythonText = document.createTextNode('Download Python Battle Simulation')
+                        python.appendChild(pythonText);
+                        moreSt.appendChild(python);
+                        pytho = true   
+                    }
+                    
+                });
+            });
+            </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>
+                    David Pittman's Portfolio
+                </h1>
+            </header>
+            <nav class="hide">
+                <ul>
+                    <li>
+                        <a href="../../index.html">home</a>
+                    </li>
+                    <li>
+                        <a
+                            href="../../pages/projects/projects.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="Questions.html">Questions</a>
+                    </li>
+                    <li>
+                        <a href="../table/History.html">History</a>
+                    </li>
+                </ul>
+            </nav>
+            <main>
+                <p>This is a page for all of my python related Projects</p>
+                <br>
+                <dl>
+                    <dt>Battle Simulation</dt>
+                    <dd>This is a text based battle Simulator, there is a dedicated battle formula with damage rolls
+                    randomized enemies and enemy AI <span id="more">Do you want to download?</span>
+                    <br>
+                    <span id="breakpoint"></span></dd>
+                </dl>
+            </main>
+            <footer>
+                Copyright&copy; David Pittman 2025
+            </footer>
+        </div>
+    </body>
+</html>
