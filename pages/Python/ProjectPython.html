@@ -13,17 +13,19 @@
                 var moreSt = document.getElementById('breakpoint')
                 const star = document.getElementById('more')
                 let pytho = false
+                var python = document.createElement('a')
+                python.setAttribute('href', '../../Python/rpg.py')
+                python.setAttribute('download', '')
+                var pythonText = document.createTextNode('Download Python Battle Simulation')
                 star.addEventListener('click', function() {
                     if(pytho === false){
-                        var python = document.createElement('a')
-                        python.setAttribute('href', '../../Python/rpg.py')
-                        python.setAttribute('download', '')
-                        var pythonText = document.createTextNode('Download Python Battle Simulation')
                         python.appendChild(pythonText);
                         moreSt.appendChild(python);
                         pytho = true   
+                    } else {
+                        moreSt.removeChild(python);
+                        pytho = false
                     }
-                    
                 });
             });
             </script>
