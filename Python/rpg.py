@@ -95,8 +95,8 @@ def turn_start(turn):
             hp += 10
             max_mp += 10
             mp += 10
-            phys_atk += 5
-            magi_atk += 5
+            phys_atk += 15
+            magi_atk += 15
         elif max_hp < 2000.0 and hasExcalibur:
             max_hp += 20
             hp += 20
@@ -164,7 +164,7 @@ def en_turn_start(turn):
         print(enemy_name + "'s Revives: " + str(en_revives) + "/" + str(max_en_revives))
     prehp = hp
     if enemy_id == 1:
-        globin_ai(turn)
+        goblin_ai(turn)
     elif enemy_id == 2:
         mage_ai(turn)
     elif enemy_id == 3:
@@ -172,7 +172,7 @@ def en_turn_start(turn):
     elif enemy_id == 4:
         golem_ai(turn)
     else:
-        globin_ai(turn)
+        goblin_ai(turn)
     if hp <= 0:
         if invincible:
             hp = prehp
@@ -395,7 +395,7 @@ def magic_menu(turn):
     en_turn_start(turn)
 
 
-def globin_ai(turn):
+def goblin_ai(turn):
     global hp
     global defined_def
     global defined_magi_def
@@ -406,6 +406,11 @@ def globin_ai(turn):
     global avalon_mult
     global en_mp
     global damage
+    global en_hp
+    global en_max_mp
+    global excalibur_pity
+    global excalibur_wait
+    global Avalon_wait
     if can_revive and en_revives == 0:
         if not charge_up:
             rng = random.randrange(1,5)
@@ -417,8 +422,9 @@ def globin_ai(turn):
             rng = random.randrange(80,100)/100
             damage = ((rng * (en_phys_atk + en_magi_atk))*magic_power) - (en_defined_def / 16)
             en_mp -= 20
-        if en_mp < 1:
-            en_hp = 0
+            charge_up = False
+        if excalibur_pity == 3:
+            rng = 3
         if rng == 1:
             print("The " + enemy_name + " swung their greatsword")
             rng = random.randrange(80,100)/100
@@ -436,6 +442,9 @@ def globin_ai(turn):
         if rng == 3:
             print("The " + enemy_name + " laid down")
             en_hp *= 1.20
+            en_phys_atk *= 1.20
+            en_max_mp += 1.10
+            en_mp *= 1.10
             if en_hp > en_max_hp:
                 en_hp = en_max_hp
             if not hasAvalon:
@@ -444,11 +453,23 @@ def globin_ai(turn):
             elif hasAvalon and not hasExcalibur:
                 print("You wandered around to find a way to escape")
                 excalibur_stacks += 1
+                Avalon_wait = True
             else:
                 print("The golem stared at you")
         if rng == 4:
             print("1st Demonic Magick")
             charge_up = True
+            damage = 0
+        if Avalon_wait:
+            Avalon_pity = 0
+        else:
+            if not hasAvalon:
+                Avalon_pity += 1
+        if excalibur_wait:
+            excalibur_pity = 0
+        else:
+            if not hasExcalibur:
+                excalibur_pity += 1
     elif can_revive:
         rng = random.randrange(1,4)
         if rng == 1:
@@ -459,16 +480,19 @@ def globin_ai(turn):
             print("The " + enemy_name + " used a rapid barrage")
             for i in range(9):
                 rng = random.randrange(80,100)/100
-                damage = ((rng * en_phys_atk) - defined_def)/6
+                damage = ((rng * en_phys_atk) - defined_def)/7
                 if damage < 0:
                     damage = 0
+                hp -= damage
                 print("Player took " + str(damage) + " damage!")
         if rng == 3:
             print("The " + enemy_name + " swung their club at player weakly")
             rng = random.randrange(80,100)/100
-            damage = ((rng * en_phys_atk) - defined_def)/6
-            print("Allowing them to save their power increasing it by 5%")
-            en_phys_atk *= 1.05
+            damage = ((rng * en_phys_atk) - defined_def)/8
+            print("Allowing them to save their power increasing it by 10%")
+            en_phys_atk *= 1.10
+            en_max_mp += 1.10
+            en_mp *= 1.10
     else:
         print("The " + enemy_name + " swung their club at player")
         rng = random.randrange(80,100)/100
@@ -791,6 +815,7 @@ def golem_ai(turn):
             rng = random.randrange(80,100)/100
             damage = ((rng * en_magi_atk)*magic_power) - (defined_magi_def / 16)
             en_mp -= 20
+            charge_up = False
         if en_mp < 1:
             en_hp = 0
         if rng == 1:
@@ -965,7 +990,7 @@ def enemy_revives(turn):
             en_magi_def = 300
         if en_revives == 0:
             enemy_name = "Demon King General 3rd Seat: Golem"
-            en_max_hp = 4500.0
+            en_max_hp = 45000.0
             en_max_mp = 40000
             en_phys_atk = 2000
             en_phys_def = 750
@@ -975,8 +1000,8 @@ def enemy_revives(turn):
         if en_revives > 0:
             self_turn = 0
             enemy_name = "Elite Goblin"
-            en_max_hp = 550.0
-            en_max_mp = 550
+            en_max_hp = 650.0
+            en_max_mp = 850
             en_phys_atk = 100
             en_phys_def = 50
             en_magi_atk = 0
@@ -985,7 +1010,7 @@ def enemy_revives(turn):
             enemy_name = "Demon King General 1st Seat: Goblin"
             en_max_hp = 5500.0
             en_max_mp = 50000
-            en_phys_atk = 4000
+            en_phys_atk = 750
             en_phys_def = 500
             en_magi_atk = 1000
             en_magi_def = 225
@@ -1041,6 +1066,12 @@ global extra_math
 global self_turn
 global avalon_mult
 global revive_cure
+global excalibur_pity
+global excalibur_wait
+global Avalon_wait
+Avalon_wait = False
+excalibur_wait = False
+excalibur_pity = 0
 revive_cure = False
 avalon_mult = 6
 self_turn = 0
