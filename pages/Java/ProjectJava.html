@@ -14,7 +14,7 @@
                 const star = document.getElementById('more')
                 let pytho = false
                 var python = document.createElement('a')
-                python.setAttribute('href', '../../Java/Finch/CommandFinch.zip')
+                python.setAttribute('href', '../../DownloadFiles/Java/Finch/CommandFinch.zip')
                 python.setAttribute('download', '')
                 var pythonText = document.createTextNode('Download CommandFinch')
                 star.addEventListener('click', function() {
@@ -25,6 +25,25 @@
                     } else {
                         moreSt.removeChild(python);
                         pytho = false
+                    }
+                });
+
+                var mS = document.querySelector('main')
+                var mSt = document.getElementById('bp')
+                const hoshi = document.getElementById('sim')
+                let Battle = false
+                var BatSim = document.createElement('a')
+                BatSim.setAttribute('href', '../../DownloadFiles/Java/JustJava/BattleSimulator(Demo).zip')
+                BatSim.setAttribute('download', '')
+                var BatSimText = document.createTextNode('Download Battle Simulator(Demo)')
+                hoshi.addEventListener('click', function() {
+                    if(Battle === false){
+                        BatSim.appendChild(BatSimText);
+                        mSt.appendChild(BatSim);
+                        pytho = true
+                    } else {
+                        mSt.removeChild(BatSim);
+                        Battle = false
                     }
                 });
             });
@@ -64,6 +83,14 @@
                     <span id="more">Do you want to download?</span>
                     <br>
                     <span id="breakpoint"></span></dd>
+                    <br>
+                    <dt><h3>Battle Simulator Demo</h3></dt>
+                    <dd>This is a remake of my python rpg simulator in java. So far it hasn't gone very far in terms of devlopment.
+                        But there are more features like elements, a new speed and turn system. And a magic and skill menu.
+                    <span id="sim">Do you want to download?</span>
+                    <br>
+                    <span id="bp"></span></dd>
+                    <br>
                 </dl>
             </main>
             <footer>
