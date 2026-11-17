@@ -15,7 +15,7 @@ header{
 body{
     font-family:Arial, Helvetica, sans-serif;
     text-align: center;
-    background-image: url(../imgs/biggradient.jpg);
+    background-image: url(../imgs/bg/biggradient.jpg);
 }
 nav{
     float: left;
@@ -161,7 +161,7 @@ th{
         font-size:90%;
     }
     body{
-    background-image: url(../imgs/gradient.jpg);
+    background-image: url(../imgs/bg/gradient.jpg);
     background-repeat: repeat-y;
     background-color: #73113b;
     font-family:Arial, Helvetica, sans-serif;
@@ -198,7 +198,7 @@ th{
         box-shadow: none;
     }
     body{
-        background-image: url(../imgs/gradient.jpg);
+        background-image: url(../imgs/bg/gradient.jpg);
         background-repeat:repeat;
         background-color: red;
     }
