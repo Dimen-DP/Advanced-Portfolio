@@ -14,7 +14,7 @@
                 const star = document.getElementById('more')
                 let pytho = false
                 var python = document.createElement('a')
-                python.setAttribute('href', '../../DownloadFiles/Java/Finch/CommandFinch.zip')
+                python.setAttribute('href', '../../../DownloadFiles/Java/Finch/CommandFinch.zip')
                 python.setAttribute('download', '')
                 var pythonText = document.createTextNode('Download CommandFinch')
                 star.addEventListener('click', function() {
@@ -33,14 +33,14 @@
                 const hoshi = document.getElementById('sim')
                 let Battle = false
                 var BatSim = document.createElement('a')
-                BatSim.setAttribute('href', '../../DownloadFiles/Java/JustJava/BattleSimulator(Demo).zip')
+                BatSim.setAttribute('href', '../../../DownloadFiles/Java/JustJava/BattleSimulator(Demo).zip')
                 BatSim.setAttribute('download', '')
                 var BatSimText = document.createTextNode('Download Battle Simulator(Demo)')
                 hoshi.addEventListener('click', function() {
                     if(Battle === false){
                         BatSim.appendChild(BatSimText);
                         mSt.appendChild(BatSim);
-                        pytho = true
+                        Battle = true
                     } else {
                         mSt.removeChild(BatSim);
                         Battle = false

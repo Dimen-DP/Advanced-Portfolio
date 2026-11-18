@@ -8,7 +8,13 @@
         <style>
         </style>
         <script>
-
+            document.addEventListener('DOMContentLoaded', function() {
+                var videoPush = document.querySelector('#vidpush')
+                var videle = document.createElement('source')
+                videle.setAttribute('src', 'Content/video/Oblivion.mp4')
+                videle.setAttribute('type', 'video/mp4')
+                videoPush.appendChild(videle);
+            });
         </script>
     </head>
     <body>
@@ -57,9 +63,7 @@
             </ul>
         <hr>
         <figure style="border:0px;">
-           <video controls="controls">
-            <source src="Content/video/Oblivion.mp4" type="video/mp4">
-            <source src="Content/video/evernight.mov" type="video/mov">
+           <video controls="controls" id="vidpush">
             Your browser does not support the video tag
         </video>
         <figcaption class="filler">
@@ -71,7 +75,7 @@
         <h2>
             contact
         </h2>
-        <a href="mailto:ctepittmand48@student.oakland.k12.mi.us">ctepittmand48@student.oakland.k12.mi.us</a>
+        <a href="mailto:Dimensionalhero08@gmail.com">Dimensionalhero08@gmail.com</a>
         </main>
         <footer>
             Copyright&copy; David Pittman 2025
